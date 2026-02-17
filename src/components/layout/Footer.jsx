@@ -6,7 +6,7 @@ const Footer = ({ navigate }) => (
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
             <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center gap-3 mb-6 text-white rounded-lg">
-                    <img src="/assets/logo-white.jpeg" alt="Logo" className="w-[8rem] md:w-[12rem] h-[4rem] md:h-[4.5rem] object-cover rounded-lg" />
+                    <img src="/assets/logo-white.jpeg" alt="Logo" className="w-[8rem] md:w-[12rem] h-[4rem] md:h-[4.2rem] object-cover object-[50%_45%] rounded-lg" />
                 </div>
                 <p className="max-w-sm text-sm leading-relaxed mb-8 text-gray-400">
                     OAVS is dedicated to bridging the gap between academic education and clinical practice. We build industry-ready vision science professionals.
