@@ -46,7 +46,7 @@ const CourseLowVision = ({ navigate }) => (
                     </div>
                 </section>
 
-                <div className="bg-[#F5F7FA] p-6 rounded-xl border border-blue-100 flex items-start gap-4 shadow-sm">
+                {/* <div className="bg-[#F5F7FA] p-6 rounded-xl border border-blue-100 flex items-start gap-4 shadow-sm">
                     <div className="bg-[#F47B20] p-3 rounded-full text-white mt-1 shrink-0">
                         <CheckCircle size={24} />
                     </div>
@@ -58,7 +58,7 @@ const CourseLowVision = ({ navigate }) => (
                             <li>• Structured case presentation & documentation</li>
                         </ul>
                     </div>
-                </div>
+                </div> */}
 
                 <section>
                     <h2 className="text-2xl font-bold text-[#163A5F] mb-6">Who Should Apply?</h2>

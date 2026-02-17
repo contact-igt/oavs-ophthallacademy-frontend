@@ -4,12 +4,36 @@ import Button from '../components/common/Button';
 
 const Admissions = ({ navigate }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [selectedPrograms, setSelectedPrograms] = useState([]);
+    const [programError, setProgramError] = useState(false);
     const {
         register,
         handleSubmit,
         reset,
         formState: { errors }
     } = useForm();
+
+    const programs = [
+        { id: 'clinical', label: 'Fellowship in Clinical Optometry', value: 'Fellowship in Clinical Optometry' },
+        { id: 'contact', label: 'Fellowship in Contact Lenses', value: 'Fellowship in Contact Lenses' },
+        { id: 'orthoptics', label: 'Fellowship in Orthoptics & Vision Therapy', value: 'Fellowship in Orthoptics & Vision Therapy' },
+        { id: 'lowvision', label: 'Fellowship in Low Vision Care', value: 'Fellowship in Low Vision Care' },
+        { id: 'dispensing', label: 'Certificate Course in Optical Dispensing', value: 'Certificate Course in Optical Dispensing' }
+    ];
+
+    const handleProgramToggle = (programValue) => {
+        setSelectedPrograms(prev => {
+            if (prev.includes(programValue)) {
+                return prev.filter(p => p !== programValue);
+            } else {
+                return [...prev, programValue];
+            }
+        });
+        // Clear error when user selects a program
+        if (programError) {
+            setProgramError(false);
+        }
+    };
 
     const handleGoogleSheetForm = async (formData) => {
         try {
@@ -27,6 +51,14 @@ const Admissions = ({ navigate }) => {
     };
 
     const onSubmit = async (data) => {
+        // Validate that at least one program is selected
+        if (selectedPrograms.length === 0) {
+            setProgramError(true);
+            // Scroll to the program selection field
+            document.querySelector('[data-program-section]')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+
         setIsSubmitting(true);
         try {
             let ip = "Not captured";
@@ -55,10 +87,10 @@ const Admissions = ({ navigate }) => {
                 // Spread data but ensure we map keys correctly for the sheet
                 first_name: data.firstName?.trim(),
                 last_name: data.lastName?.trim(),
-                email_address: data.email?.trim(),
+                email: data.email?.trim(),
                 phone: data.phone?.trim(),
-                program: data.program?.trim(),
-                ip: ip,
+                program: selectedPrograms.join(", "), // Join multiple programs with comma
+                ip_address: ip,
                 utm_source: localStorage.getItem("utm_source") || "direct",
                 timestamp: new Date().toISOString()
             };
@@ -77,6 +109,7 @@ const Admissions = ({ navigate }) => {
 
             if (success) {
                 reset();
+                setSelectedPrograms([]); // Reset selected programs
                 navigate('thank-you');
             } else {
                 alert("Something went wrong. Please try again.");
@@ -206,20 +239,38 @@ const Admissions = ({ navigate }) => {
                                 {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                             </div>
 
-                            <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Interested Program *</label>
-                                <select
-                                    {...register("program", { required: "Please select a program" })}
-                                    className={`w-full bg-gray-50 border ${errors.program ? 'border-red-500' : 'border-gray-200'} rounded-lg p-3.5 focus:ring-2 focus:ring-[#F47B20] focus:border-transparent outline-none transition-all font-medium`}
-                                >
-                                    <option value="">Select a program</option>
-                                    <option value="Clinical Optometry">Fellowship in Clinical Optometry</option>
-                                    <option value="Contact Lenses">Fellowship in Contact Lenses</option>
-                                    <option value="Orthoptics">Fellowship in Orthoptics & Vision Therapy</option>
-                                    <option value="Low Vision">Fellowship in Low Vision Care</option>
-                                    <option value="Optical Dispensing">Optical Dispensing Certificate</option>
-                                </select>
-                                {errors.program && <p className="text-red-500 text-xs mt-1">{errors.program.message}</p>}
+                            <div data-program-section>
+                                <label className="block text-sm font-bold text-gray-700 mb-3">Interested Programs *</label>
+                                <p className="text-xs text-gray-500 mb-3">Select one or more programs you're interested in</p>
+                                <div className={`space-y-3 ${programError ? 'ring-2 ring-red-500 rounded-lg p-3' : ''}`}>
+                                    {programs.map((program) => (
+                                        <div
+                                            key={program.id}
+                                            onClick={() => handleProgramToggle(program.value)}
+                                            className={`flex items-start gap-3 p-4 rounded-lg border-2 cursor-pointer transition-all ${selectedPrograms.includes(program.value)
+                                                ? 'border-[#F47B20] bg-orange-50'
+                                                : 'border-gray-200 bg-gray-50 hover:border-gray-300'
+                                                }`}
+                                        >
+                                            <div className={`flex-shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center mt-0.5 transition-all ${selectedPrograms.includes(program.value)
+                                                ? 'bg-[#F47B20] border-[#F47B20]'
+                                                : 'border-gray-300 bg-white'
+                                                }`}>
+                                                {selectedPrograms.includes(program.value) && (
+                                                    <svg className="w-3 h-3 text-white" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path d="M5 13l4 4L19 7"></path>
+                                                    </svg>
+                                                )}
+                                            </div>
+                                            <label className="flex-1 cursor-pointer font-medium text-gray-800 text-sm">
+                                                {program.label}
+                                            </label>
+                                        </div>
+                                    ))}
+                                </div>
+                                {programError && selectedPrograms.length === 0 && (
+                                    <p className="text-red-500 text-xs mt-2 font-medium">Please select at least one program</p>
+                                )}
                             </div>
 
                             <div className="pt-4">
