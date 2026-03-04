@@ -123,7 +123,7 @@ const Admissions = ({ navigate }) => {
     };
 
     return (
-        <div className="pt-24 min-h-screen bg-[#F5F7FA]">
+        <div className="pt-20 min-h-screen bg-[#F5F7FA]">
             <div className="bg-[#163A5F] text-white py-20 px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-4xl font-bold mb-4">Admissions Open</h1>

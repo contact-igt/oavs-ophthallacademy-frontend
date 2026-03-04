@@ -3,8 +3,8 @@ import { Eye, Clock, Calendar, Download } from 'lucide-react';
 import Button from '../components/common/Button';
 import CheckItem from '../components/common/CheckItem';
 
-const CourseContactLens = ({ navigate }) => (
-    <div className="pt-24 min-h-screen bg-white">
+const CourseContactLens = ({ navigate, onBrochureDownload }) => (
+    <div className="pt-20 min-h-screen bg-white">
         <div className="relative bg-[#163A5F] text-white py-24 px-4 overflow-hidden">
             <div className="absolute inset-0">
                 <img
@@ -19,7 +19,7 @@ const CourseContactLens = ({ navigate }) => (
                 <h1 className="text-3xl md:text-5xl font-bold mt-4 mb-4">Contact Lenses</h1>
                 <p className="text-blue-100 max-w-2xl text-lg mb-8">A specialization program for independent contact lens fitting and management.</p>
                 <div className="flex flex-wrap gap-4">
-                    <Button onClick={() => navigate('admissions')} variant="primary" className="gap-2">
+                    <Button onClick={onBrochureDownload} variant="primary" className="gap-2">
                         <Download size={20} /> Download Brochure
                     </Button>
                 </div>
