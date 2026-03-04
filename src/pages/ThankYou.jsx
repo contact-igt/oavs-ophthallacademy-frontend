@@ -5,7 +5,7 @@ import Section from '../components/common/Section';
 
 const ThankYou = ({ navigate }) => {
     return (
-        <div className="pt-24 min-h-screen bg-[#F5F7FA]">
+        <div className="pt-20 min-h-screen bg-[#F5F7FA]">
             <Section>
                 <div className="max-w-3xl mx-auto text-center">
                     <div className="mb-8 flex justify-center">

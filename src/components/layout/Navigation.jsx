@@ -17,6 +17,7 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                 { label: 'Contact Lens', value: 'contact-lens' },
                 { label: 'Orthoptics & Vision Therapy', value: 'orthoptics' },
                 { label: 'Low Vision Care', value: 'low-vision' },
+                { label: 'Internship', value: 'internship' },
             ]
         },
         { label: 'Admissions', value: 'admissions' },
@@ -35,7 +36,9 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
     };
 
     return (
-        <nav className={`fixed w-full z-50 transition-all duration-300 bg-white ${scrolled ? 'shadow-lg py-2' : 'shadow-md py-4'}`}>
+        <nav
+            className={`fixed w-full z-50 transition-all duration-300 bg-white ${scrolled ? 'shadow-lg py-2' : 'shadow-md py-4'}`}
+        >
             <div className="w-full px-4 md:px-8 lg:px-12 xl:px-16 flex justify-between items-center">
                 {/* Logo */}
                 <div className="flex items-center cursor-pointer" onClick={() => navigate('home')}>

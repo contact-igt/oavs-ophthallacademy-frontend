@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Button = ({ children, variant = 'primary', onClick, className = '' }) => {
+const Button = ({ children, variant = 'primary', onClick, className = '', href = '', download = false }) => {
     const baseStyle = "px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2";
     const variants = {
         primary: `bg-[#F47B20] text-white hover:bg-[#d66a15] shadow-lg shadow-orange-500/30`,
@@ -9,8 +9,18 @@ const Button = ({ children, variant = 'primary', onClick, className = '' }) => {
         ghost: `bg-white text-[#163A5F] hover:bg-gray-100 shadow-md`
     };
 
+    const classes = `${baseStyle} ${variants[variant]} ${className}`;
+
+    if (href) {
+        return (
+            <a href={href} className={classes} download={download}>
+                {children}
+            </a>
+        );
+    }
+
     return (
-        <button onClick={onClick} className={`${baseStyle} ${variants[variant]} ${className}`}>
+        <button onClick={onClick} className={classes}>
             {children}
         </button>
     );

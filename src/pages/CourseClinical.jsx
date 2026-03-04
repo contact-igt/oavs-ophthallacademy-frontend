@@ -3,8 +3,8 @@ import { Eye, Clock, Calendar, CheckCircle, Download } from 'lucide-react';
 import Button from '../components/common/Button';
 import CheckItem from '../components/common/CheckItem';
 
-const CourseClinical = ({ navigate }) => (
-    <div className="pt-24 min-h-screen bg-white">
+const CourseClinical = ({ navigate, onBrochureDownload }) => (
+    <div className="pt-20 min-h-screen bg-white">
         <div className="relative bg-[#163A5F] text-white py-24 px-4 overflow-hidden">
             <div className="absolute inset-0">
                 <img
@@ -19,7 +19,7 @@ const CourseClinical = ({ navigate }) => (
                 <h1 className="text-3xl md:text-5xl font-bold mt-4 mb-4">Clinical Optometry</h1>
                 <p className="text-blue-100 max-w-2xl text-lg mb-8">An advanced clinical optometry fellowship with 200+ mandatory full workups.</p>
                 <div className="flex flex-wrap gap-4">
-                    <Button onClick={() => navigate('admissions')} variant="primary" className="gap-2">
+                    <Button onClick={onBrochureDownload} variant="primary" className="gap-2">
                         <Download size={20} /> Download Brochure
                     </Button>
                 </div>

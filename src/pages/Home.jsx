@@ -8,7 +8,7 @@ import Section from '../components/common/Section';
 import Card from '../components/common/Card';
 import CheckItem from '../components/common/CheckItem';
 
-const Home = ({ navigate }) => (
+const Home = ({ navigate, onBrochureDownload }) => (
     <>
         {/* Hero Section */}
         <div className="relative bg-[#163A5F] text-white pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
@@ -36,7 +36,7 @@ const Home = ({ navigate }) => (
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <Button onClick={() => navigate('admissions')}>Apply Now</Button>
-                        <Button variant="secondary" onClick={() => navigate('admissions')}>Download Brochure</Button>
+                        <Button variant="secondary" onClick={onBrochureDownload}>Download Brochure</Button>
                     </div>
                 </div>
 
@@ -175,7 +175,7 @@ const Home = ({ navigate }) => (
                 <p className="text-blue-200 mb-10 max-w-2xl mx-auto">Limited seats available for the upcoming batch. Secure your future in clinical optometry today.</p>
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                     <Button onClick={() => navigate('admissions')}>Apply Now</Button>
-                    <Button variant="secondary" onClick={() => navigate('admissions')}>Download Brochure</Button>
+                    <Button variant="secondary" onClick={onBrochureDownload}>Download Brochure</Button>
                 </div>
             </div>
         </section>
