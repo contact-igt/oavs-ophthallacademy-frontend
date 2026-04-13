@@ -14,6 +14,7 @@ import CourseLowVision from './pages/CourseLowVision';
 import Admissions from './pages/Admissions';
 import Internship from './pages/Internship';
 import ThankYou from './pages/ThankYou';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import useUTMSource from './utils/useUTMSource';
 
 const App = () => {
@@ -92,6 +93,7 @@ const App = () => {
                 {currentPage === 'internship' && <Internship navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'admissions' && <Admissions navigate={navigate} />}
                 {currentPage === 'thank-you' && <ThankYou navigate={navigate} />}
+                {currentPage === 'privacy-policy' && <PrivacyPolicy navigate={navigate} />}
             </main>
 
             <Footer navigate={navigate} />

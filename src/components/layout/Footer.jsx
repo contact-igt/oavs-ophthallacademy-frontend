@@ -24,6 +24,7 @@ const Footer = ({ navigate }) => (
                     <li onClick={() => navigate('about')} className="hover:text-[#F47B20] cursor-pointer transition-colors">About Us</li>
                     <li onClick={() => navigate('admissions')} className="hover:text-[#F47B20] cursor-pointer transition-colors">Admissions</li>
                     <li onClick={() => navigate('contact')} className="hover:text-[#F47B20] cursor-pointer transition-colors">Contact</li>
+                    <li onClick={() => navigate('privacy-policy')} className="hover:text-[#F47B20] cursor-pointer transition-colors">Privacy Policy</li>
                 </ul>
             </div>
 
@@ -32,7 +33,7 @@ const Footer = ({ navigate }) => (
                 <ul className="space-y-4 text-sm">
                     <li className="flex items-center gap-3">
                         <Phone size={18} className="text-[#F47B20]" />
-                        <span>+91 91769 44244</span>
+                        <span>+91 91769 44244</span>
                     </li>
                     <li className="flex items-center gap-3">
                         <Mail size={18} className="text-[#F47B20]" />
@@ -41,7 +42,18 @@ const Footer = ({ navigate }) => (
                 </ul>
             </div>
         </div>
-        <div className="text-center pt-8 border-t border-gray-800 text-xs text-gray-600 font-medium tracking-wide">
+
+        {/* Privacy Policy Summary */}
+        <div className="pt-8 border-t border-gray-800 mb-8">
+            <p className="text-xs text-gray-500 leading-relaxed max-w-4xl mx-auto text-center">
+                <span className="font-semibold text-gray-400">Privacy Policy Summary:</span> OAVS – Ophthall Academy of Vision Sciences collects personal information such as name, phone number, email, and enquiry/admission details when users contact the academy or submit forms through the website. This information is used to respond to enquiries, support admissions-related communication, improve services, and maintain website security. For privacy concerns, contact{' '}
+                <a href="mailto:academy@ophthall.in" className="text-[#F47B20] hover:underline">academy@ophthall.in</a> or{' '}
+                <a href="tel:+919176944244" className="text-[#F47B20] hover:underline">+91 91769 44244</a>.{' '}
+                <span onClick={() => navigate('privacy-policy')} className="text-[#F47B20] hover:underline cursor-pointer font-medium">Read full Privacy Policy →</span>
+            </p>
+        </div>
+
+        <div className="text-center pt-6 border-t border-gray-800 text-xs text-gray-600 font-medium tracking-wide">
             © 2026 OPH-THALL ACADEMY OF VISION SCIENCES. ALL RIGHTS RESERVED.
         </div>
     </footer>
