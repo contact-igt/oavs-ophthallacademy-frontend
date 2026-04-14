@@ -43,7 +43,7 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                 {/* Logo */}
                 <div className="flex items-center cursor-pointer" onClick={() => navigate('home')}>
                     {/* <img src="/assets/logo.png" alt="Logo" className="w-auto h-14 object-cover scale-2" /> */}
-                    <img src="/assets/logo.png" alt="Logo" className="w-[8rem] md:w-[10rem] h-14 object-cover" />
+                    <img src="/assets/logo1.png" alt="Logo" className="w-[8rem] md:w-[10rem] h-14 object-cover" />
                 </div>
 
                 {/* Desktop Nav */}
