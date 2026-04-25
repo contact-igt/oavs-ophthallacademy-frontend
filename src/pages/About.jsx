@@ -522,7 +522,7 @@ const facultyData = [
     {
         name: "Mr. Arun",
         role: "Faculty – Optical Dispensing & Practice Management",
-        image: "/assets/placeholder.png",
+        image: "/assets/Dr. Arun.jpeg",
         description: "Industry professional with extensive hands-on experience in optical dispensing, retail operations, and practical training.",
         accentColor: "from-[#F47B20] to-[#d96a15]",
         icon: Star,
