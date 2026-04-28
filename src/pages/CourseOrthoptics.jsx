@@ -70,6 +70,23 @@ const CourseOrthoptics = ({ navigate, onBrochureDownload }) => (
                         ))}
                     </div>
                 </section>
+
+                {/* YouTube Video Section */}
+                <section>
+                    <h2 className="text-2xl font-bold text-[#163A5F] mb-6">
+                        Orthoptics &amp; Vision Therapy in Action
+                    </h2>
+                    <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ paddingBottom: '56.25%' }}>
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/tiQiIczx3eY?si=NLETe3a4tGGugDLR"
+                            title="Orthoptics & Vision Therapy Fellowship - Ophthall Academy"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        />
+                    </div>
+                </section>
             </div>
 
             {/* Sidebar */}
@@ -90,6 +107,8 @@ const CourseOrthoptics = ({ navigate, onBrochureDownload }) => (
                 </div>
             </div>
         </div>
+
+
     </div>
 );
 
