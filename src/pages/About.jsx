@@ -7,7 +7,7 @@ import { Award, BookOpen, Stethoscope, GraduationCap, Star, X, ChevronLeft, Chev
    MARCH 2026 ACTIVITY TIMELINE
 ═══════════════════════════════════════════════════════════════ */
 
-const marchMilestones = [
+const milestones = [
     {
         date: "13 Mar 2026",
         title: "Glaucoma Week Celebrations — PPG Institute",
@@ -93,6 +93,14 @@ const marchMilestones = [
             "The formal inauguration of Ophthall Academy of Vision Sciences was conducted on 29th March 2026 at Hotel Radha Regent, Koyambedu, Chennai — graced by Dr. Rajesh Ramachandran, Dr. Mohan Rajan, Dr. T. Senthil and the entire OAVS team. The event included MOU signings, ribbon cutting, and lamp lighting ceremonies, Audience group photo on stage",
         images: ["/assets/milestones/inauguration.png"],
         tag: "Inauguration",
+    },
+    {
+        date: "29 Apr 2026",
+        title: "MOU Signed with MVM",
+        description:
+            "An MOU was signed between Ophthall Academy of Vision Sciences and Department of Optometry, Manakula Vinayagar College of Allied health Sciences, Pondicherry on 29th April 2026 in the presence of Director of Medical College Dr Venkatachalam, Dr Muthukumar, Dean of School of Allied health Sciences, senior officials and faculty members. Seen in the picture are Dr Anuja R Singh, Principal OAVS and officials of MVMCH.",
+        images: ["/assets/milestones/29th_apr_img1.png"],
+        tag: "MOU Signed",
     },
 ];
 
@@ -784,20 +792,20 @@ const About = () => {
                     </div>
                 </section>
 
-                {/* ===== MARCH 2026 ACTIVITY TIMELINE ===== */}
+                {/* ===== ACTIVITY TIMELINE ===== */}
                 <section className="mt-28 pb-16">
                     {/* Section Header */}
                     <div className="text-center mb-14">
                         <span className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-widest text-[#F47B20] bg-[#163A5F] px-4 py-1.5 rounded-full mb-3 shadow-md">
                             <span className="w-2 h-2 rounded-full bg-[#F47B20] flex-shrink-0" />
-                            Our Milestones
+                            Our Journey
                         </span>
                         <h2 className="text-3xl md:text-4xl font-bold text-[#163A5F] mb-2">
-                            Milestones
+                            Activity Timeline
                         </h2>
                         <div className="w-16 h-1 bg-[#F47B20] mx-auto rounded-full mb-4" />
                         <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-                            From academic partnerships and expert webinars to national institution visits and the grand inaugural ceremony — a recap of OAVS in action during March 2026.
+                            A recap of our key activities, academic partnerships, and institutional engagements as we continue to transform optometry education.
                         </p>
                     </div>
 
@@ -820,7 +828,7 @@ const About = () => {
                             aria-hidden="true"
                         />
 
-                        {marchMilestones.map((milestone, index) => (
+                        {milestones.map((milestone, index) => (
                             <MilestoneItem key={index} milestone={milestone} index={index} />
                         ))}
                     </div>
