@@ -15,7 +15,7 @@ const CourseDispensing = ({ navigate, onBrochureDownload }) => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#163A5F] to-transparent"></div>
             </div>
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <span className="text-[#F47B20] font-bold tracking-wider uppercase text-sm bg-white/10 px-3 py-1 rounded-full backdrop-blur-md">Certificate Course</span>
                 <h1 className="text-3xl md:text-5xl font-bold mt-4 mb-4">Optical Dispensing</h1>
                 <p className="text-blue-100 max-w-2xl text-lg mb-8">Master the art and science of eyewear fitting, sales, and store management.</p>
@@ -27,7 +27,7 @@ const CourseDispensing = ({ navigate, onBrochureDownload }) => (
             </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-12">
             {/* Main Content */}
             <div className="md:col-span-3 space-y-12">
                 <section>
@@ -47,7 +47,7 @@ const CourseDispensing = ({ navigate, onBrochureDownload }) => (
                 <section>
                     <h2 className="text-2xl font-bold text-[#163A5F] mb-6">Who Should Apply?</h2>
                     <div className="grid grid-cols-2 gap-4">
-                        {['Opticians', 'Optical store staff', 'Diploma Holders', 'Fresh Graduates'].map(i => (
+                        {['Opticians', 'Optical store staff', 'Ophthalmologists', 'Optometrists'].map(i => (
                             <div key={i} className="bg-gray-50 p-4 rounded-lg text-center font-medium text-gray-700 hover:bg-blue-50 transition-colors cursor-default border border-gray-100">
                                 {i}
                             </div>
@@ -78,7 +78,9 @@ const CourseDispensing = ({ navigate, onBrochureDownload }) => (
                             </div>
                             <div>
                                 <p className="text-xs text-gray-500 uppercase font-bold">Start Date</p>
-                                <p className="font-semibold">April 1, 2026</p>
+                                <p className="font-semibold text-gray-800">
+                                    April, 2026 <span className="text-gray-500 text-sm font-medium ml-1">(current batch)</span>
+                                </p>
                             </div>
                         </div>
 
@@ -103,7 +105,15 @@ const CourseDispensing = ({ navigate, onBrochureDownload }) => (
                         </div>
                     </div>
 
-                    <Button onClick={() => navigate('admissions')} className="w-full">Apply Now</Button>
+                    <div className="space-y-3">
+                        <Button onClick={() => navigate('admissions')} className="w-full">Apply Now</Button>
+                        <div className="flex items-center justify-center gap-2 opacity-70">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#F47B20] animate-pulse" />
+                            <p className="text-[10px] font-bold text-[#163A5F] uppercase tracking-widest">
+                                (For upcoming batches)
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
