@@ -63,7 +63,7 @@ const CourseOrthoptics = ({ navigate, onBrochureDownload }) => (
                 <section>
                     <h2 className="text-2xl font-bold text-[#163A5F] mb-6">Who Should Apply?</h2>
                     <div className="grid grid-cols-2 gap-4">
-                        {['UG Degree in Ophthalmologists', 'Practicing Optometrists', 'Pediatric/Neuro Clinicians', 'Fresh Optometry Graduates'].map(i => (
+                        {['Ophthalmologists', 'Practicing Optometrists', 'Pediatric/Neuro Clinicians', 'Fresh Optometry Graduates'].map(i => (
                             <div key={i} className="bg-gray-50 p-4 rounded-lg text-center font-medium text-gray-700 hover:bg-blue-50 transition-colors cursor-default border border-gray-100">
                                 {i}
                             </div>
