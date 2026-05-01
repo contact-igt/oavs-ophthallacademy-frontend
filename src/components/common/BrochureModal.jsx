@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Download, User, Phone, Mail } from 'lucide-react';
 
-const BROCHURE_PDF = '/ophthall_brochure.pdf';
+const BROCHURE_PDF = '/ophthall_brochure_2.pdf';
 const SHEET_URL =
     'https://script.google.com/macros/s/AKfycbxgH70HZ6IGqfvZnAT4XmEuSMhQDxFftEvjiKT8YarfVcytAJbIrB2yakBZo_Z6x3Hl/exec';
 
