@@ -21,7 +21,7 @@ const Internship = ({ navigate, onBrochureDownload }) => (
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#163A5F] via-[#163A5F]/90 to-transparent" />
             </div>
-            <div className="max-w-5xl mx-auto relative z-10">
+            <div className="max-w-6xl mx-auto relative z-10">
                 <span className="text-[#F47B20] font-bold tracking-wider uppercase text-sm bg-white/10 px-3 py-1 rounded-full backdrop-blur-md">
                     UG Clinical Internship
                 </span>
@@ -74,7 +74,7 @@ const Internship = ({ navigate, onBrochureDownload }) => (
         </div>
 
         {/* Main Content + Sidebar */}
-        <div className="max-w-5xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-5 gap-12">
 
             {/* Left — Main Content */}
             <div className="md:col-span-3 space-y-14">
