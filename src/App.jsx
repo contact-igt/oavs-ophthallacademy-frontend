@@ -60,8 +60,8 @@ const App = () => {
         if (sessionStorage.getItem('brochureFormSubmitted') === 'true') {
             // Already submitted this session — download directly
             const a = document.createElement('a');
-            a.href = '/ophthall_brochure_2.pdf';
-            a.download = 'OAVS_Brochure.pdf';
+            a.href = '/broucher.jpeg';
+            a.download = 'broucher.jpeg';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
