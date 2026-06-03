@@ -102,8 +102,8 @@ const Internship = ({ navigate, onBrochureDownload }) => (
           <p className="text-sm font-semibold uppercase tracking-wide">
             Accommodation
           </p>
-          <p className="text-2xl font-extrabold mt-2">Discounted Fee</p>
-          <p className="text-sm opacity-90 mt-1">Assistance available*</p>
+          <p className="text-2xl font-extrabold mt-2">Discounted Fee *</p>
+          <p className="text-sm opacity-90 mt-1">Assistance available</p>
         </div>
       </div>
 
