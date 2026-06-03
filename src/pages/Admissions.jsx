@@ -14,12 +14,12 @@ const Admissions = ({ navigate }) => {
     } = useForm();
 
     const programs = [
+        { id: 'internship', label: 'Clinical Optometry Internship ( 1 Year )', value: 'Clinical Optometry Internship ( 1 Year )' },
         { id: 'clinical', label: 'Fellowship in Clinical Optometry', value: 'Fellowship in Clinical Optometry' },
         { id: 'contact', label: 'Fellowship in Contact Lenses', value: 'Fellowship in Contact Lenses' },
         { id: 'orthoptics', label: 'Fellowship in Orthoptics & Vision Therapy', value: 'Fellowship in Orthoptics & Vision Therapy' },
         { id: 'lowvision', label: 'Fellowship in Low Vision Care', value: 'Fellowship in Low Vision Care' },
-        { id: 'dispensing', label: 'Certificate Course in Optical Dispensing', value: 'Certificate Course in Optical Dispensing' },
-        { id: 'internship', label: 'Clinical Optometry Internship ( 1 Year )', value: 'Clinical Optometry Internship ( 1 Year )' }
+        { id: 'dispensing', label: 'Certificate Course in Optical Dispensing', value: 'Certificate Course in Optical Dispensing' }
 
     ];
 
