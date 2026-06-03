@@ -82,23 +82,13 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             Reputed Eye Hospitals Pan India
           </p>
         </div>
-
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide">
             Monthly Stipend
           </p>
           <p className="text-3xl font-extrabold mt-2">Upto Rs 20,000/-*</p>
-          {/* <p className="text-sm opacity-90 mt-1">Paid during internship</p> */}
+          <p className="text-sm opacity-90 mt-1">Paid during internship</p>
         </div>
-
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wide">
-            Accommodation
-          </p>
-          <p className="text-3xl font-extrabold mt-2">Discounted Fee</p>
-          {/* <p className="text-sm opacity-90 mt-1">Assistance available*</p> */}
-        </div>
-
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide">
             Job Assurance
@@ -108,9 +98,16 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             Minimum salary on completion
           </p>
         </div>
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide">
+            Accommodation
+          </p>
+          <p className="text-2xl font-extrabold mt-2">Discounted Fee</p>
+          <p className="text-sm opacity-90 mt-1">Assistance available*</p>
+        </div>
       </div>
 
-      <div className=" mt-3 text-center">
+      <div className=" mt-5 pt-3 text-center">
         <p className="text-sm font-semibold uppercase tracking-wide">
           * For Select Candidates
         </p>
@@ -159,7 +156,7 @@ const Internship = ({ navigate, onBrochureDownload }) => (
           <h2 className="text-2xl font-bold text-[#163A5F] mb-6 flex items-center gap-2">
             <Calendar className="text-[#F47B20]" /> Batch Dates
           </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
                 label: "First Batch",
@@ -179,9 +176,9 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             ].map((batch) => (
               <div
                 key={batch.label}
-                className="bg-gradient-to-br from-[#163A5F] to-[#1e4d7a] text-white p-6 rounded-2xl shadow-lg"
+                className="bg-gradient-to-br from-[#163A5F] to-[#1e4d7a] text-white p-6 rounded-2xl shadow-lg text-center flex flex-col items-center"
               >
-                <span className="text-xs font-bold uppercase tracking-widest text-[#F47B20] bg-white/10 px-2 py-0.5 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#F47B20] bg-white/10 px-2 py-0.5 rounded-full inline-block">
                   {batch.label}
                 </span>
                 <p className="text-2xl font-black mt-3">{batch.date}</p>
