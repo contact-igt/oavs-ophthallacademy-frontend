@@ -82,13 +82,23 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             Reputed Eye Hospitals Pan India
           </p>
         </div>
+
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide">
             Monthly Stipend
           </p>
           <p className="text-3xl font-extrabold mt-2">Upto Rs 20,000/-*</p>
-          <p className="text-sm opacity-90 mt-1">Paid during internship</p>
+          {/* <p className="text-sm opacity-90 mt-1">Paid during internship</p> */}
         </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-wide">
+            Accommodation
+          </p>
+          <p className="text-3xl font-extrabold mt-2">Discounted Fee</p>
+          {/* <p className="text-sm opacity-90 mt-1">Assistance available*</p> */}
+        </div>
+
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide">
             Job Assurance
@@ -98,13 +108,12 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             Minimum salary on completion
           </p>
         </div>
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-wide">
-            Accommodation
-          </p>
-          <p className="text-3xl font-extrabold mt-2">Discounted Fee</p>
-          <p className="text-sm opacity-90 mt-1">Assistance available*</p>
-        </div>
+      </div>
+
+      <div className=" mt-3 text-center">
+        <p className="text-sm font-semibold uppercase tracking-wide">
+          * For Select Candidates
+        </p>
       </div>
     </div>
 
@@ -336,7 +345,11 @@ const Internship = ({ navigate, onBrochureDownload }) => (
             <div className="space-y-5">
               {[
                 { Icon: Clock, label: "Duration", value: "1 Year" },
-                { Icon: Calendar, label: "Batches", value: "Jul, Aug & Sept 2026" },
+                {
+                  Icon: Calendar,
+                  label: "Batches",
+                  value: "Jul, Aug & Sept 2026",
+                },
                 { Icon: Users, label: "Total Intake", value: "100 Seats Only" },
                 {
                   Icon: GraduationCap,
@@ -348,7 +361,11 @@ const Internship = ({ navigate, onBrochureDownload }) => (
                   label: "Course Fee",
                   value: "₹60,000 Including GST (Scholarships Available)",
                 },
-                { Icon: Award, label: "Stipend", value: "Provided during internship ( For Select Candidate )" },
+                {
+                  Icon: Award,
+                  label: "Stipend",
+                  value: "Provided during internship ( For Select Candidate )",
+                },
               ].map(({ Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-4">
                   <div className="bg-blue-50 p-3 rounded-full text-[#163A5F] shrink-0">
