@@ -615,13 +615,16 @@ const facultyData = [
   },
   {
     name: "Dr. Anuja R. Singh",
-    role: "Senior Academic Advisor & Faculty",
+    role: "Principal, OAVS",
     image: "/assets/Dr. Anuja R. Singh.jpeg",
     description:
-      "Over 30 years of experience as a clinical optometrist, educator, trainer, academician, and administrator. An Alumna of Elite School of Optometry (1993), former Head of Department and Principal at The Sankara Nethralaya Academy (TSNA) for over a decade. She has played a key role in developing fellowships, certificate programs, and degree courses.",
+      "Over 30 years of experience as a clinical optometrist, educator, trainer, academician, and administrator. A Healthcare Administrator and thought leader, former Head of Department and Principal at The Sankara Nethralaya Academy (TSNA) for over a decade. She has played a key role in developing fellowships, certificate programs, and degree courses.",
     accentColor: "from-[#163A5F] to-[#0f2c4a]",
     icon: Award,
-    credentials: ["Elite School of Optometry", "Ex-Principal, TSNA"],
+    credentials: [
+      "Healthcare Administrator / Thought Leader",
+      "Ex-Principal, TSNA",
+    ],
   },
   {
     name: "Dr. Viswanathan Sivaraman",
@@ -675,20 +678,20 @@ const facultyData = [
       "Vision Therapy",
     ],
   },
-  {
-    name: "Ms. Revathy",
-    role: "Senior Faculty – Optometry, Low Vision & Sports Vision",
-    image: "/assets/Dr.Revathi.jpeg",
-    description:
-      "Senior Optometrist with over 12 years of experience as a clinical practitioner and educator. Alumna of the Elite School of Optometry, she has taught in diverse academic environments across ophthalmic institutions in Tamil Nadu. Her areas of interest include General Optometry, Low Vision management, contact lenses, Binocular Vision, and Sports Vision. She has guided undergraduate, fellowship, and postgraduate students in Optometry, and has initiated multiple training programs for skill development among practitioners.",
-    accentColor: "from-[#163A5F] to-[#0f2c4a]",
-    icon: Award,
-    credentials: [
-      "Elite School Alumna",
-      "Low Vision & Sports Vision",
-      "PG & UG Mentor",
-    ],
-  },
+  // {
+  //   name: "Ms. Revathy",
+  //   role: "Senior Faculty – Optometry, Low Vision & Sports Vision",
+  //   image: "/assets/Dr.Revathi.jpeg",
+  //   description:
+  //     "Senior Optometrist with over 12 years of experience as a clinical practitioner and educator. Alumna of the Elite School of Optometry, she has taught in diverse academic environments across ophthalmic institutions in Tamil Nadu. Her areas of interest include General Optometry, Low Vision management, contact lenses, Binocular Vision, and Sports Vision. She has guided undergraduate, fellowship, and postgraduate students in Optometry, and has initiated multiple training programs for skill development among practitioners.",
+  //   accentColor: "from-[#163A5F] to-[#0f2c4a]",
+  //   icon: Award,
+  //   credentials: [
+  //     "Elite School Alumna",
+  //     "Low Vision & Sports Vision",
+  //     "PG & UG Mentor",
+  //   ],
+  // },
   {
     name: "Dr. V.K. Rai",
     role: "Faculty – Orthoptics, Binocular Vision & Squint",
@@ -715,6 +718,20 @@ const facultyData = [
       "Sankara Nethralaya Fellow",
       "PG Diploma, Spain",
       "President, HP Optometry Association",
+    ],
+  },
+  {
+    name: "Poongothai Senthilkumar",
+    role: "Faculty – Optical Dispensing & Practice Management",
+    image: "/assets/poongothi.png",
+    description:
+      "An alumna of the Elite School of Optometry with close to three decades of experience in optometry and opticianry. As an entrepreneur and independent optometrist, she runs Optical Gallery, an optical store providing optical dispensing services successfully for more than 20 years. She is ex-President of the Optometry Association of Tamil Nanbargal (OATN).",
+    accentColor: "from-[#F47B20] to-[#d96a15]",
+    icon: Star,
+    credentials: [
+      "Elite School of Optometry Alumna",
+      "20+ Years Optical Dispensing",
+      "Ex-President, OATN",
     ],
   },
   // {
