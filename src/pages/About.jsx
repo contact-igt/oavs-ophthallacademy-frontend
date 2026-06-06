@@ -606,7 +606,7 @@ const facultyData = [
   {
     name: "Dr. Tamilarasan Senthil",
     role: "Founder & Chief Mentor",
-    image: "/assets/Dr. T. Senthil.png",
+    image: "assets/milestones/profile.png",
     description:
       "Ophthalmologist, healthcare entrepreneur, and practice development expert. Dr. Senthil brings deep experience in clinical care and healthcare leadership with a strong focus on building skill-based training ecosystems.",
     accentColor: "from-[#163A5F] to-[#1e4d7a]",
@@ -732,6 +732,20 @@ const facultyData = [
       "Elite School of Optometry Alumna",
       "20+ Years Optical Dispensing",
       "Ex-President, OATN",
+    ],
+  },
+  {
+    name: "G. Hemavathy",
+    role: "Faculty – Optical Practice & Patient Counselling",
+    image: "/assets/hemavathy.jpeg",
+    description:
+      "Alumna of the Elite School of Optometry (Class of 2010). She began her career at Sankara Nethralaya, Chennai, where she gained expertise in pediatric refraction and squint evaluation and was actively involved in training internship and fellowship students. Since 2016, she has focused on optical practice, developing expertise in vision correction, lens selection, and patient counselling. She remains committed to maintaining high standards in optometric practice and supporting the training of future professionals.",
+    accentColor: "from-[#F47B20] to-[#d96a15]",
+    icon: Star,
+    credentials: [
+      "Elite School of Optometry (2010)",
+      "Ex-Sankara Nethralaya, Chennai",
+      "Optical Practice since 2016",
     ],
   },
   // {
