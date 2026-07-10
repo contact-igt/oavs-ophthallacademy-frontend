@@ -1,7 +1,7 @@
 import React from 'react';
 import {
     Eye, GraduationCap, BookOpen, Calendar,
-    CheckCircle, Clock
+    CheckCircle, Clock, PlayCircle, Youtube, Stethoscope, Handshake, TrendingUp, Award
 } from 'lucide-react';
 import Button from '../components/common/Button';
 import Section from '../components/common/Section';
@@ -65,16 +65,16 @@ const Home = ({ navigate, onBrochureDownload }) => (
         </div>
 
         {/* Transforming Clinical Optometry */}
-        <Section className="bg-white">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <div className="order-2 md:order-1 relative">
-                    <div className="absolute -inset-4 bg-[#F47B20]/10 rounded-3xl transform -rotate-3"></div>
+        <Section className="bg-white overflow-hidden">
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div className="order-2 md:order-1 relative mx-2 md:mx-0">
+                    <div className="absolute inset-0 md:-inset-4 bg-[#F47B20]/10 rounded-3xl transform -rotate-3"></div>
                     <img
                         src="./assets/optometry.png"
                         alt="Clinical Training"
-                        className="relative rounded-2xl shadow-xl w-full object-cover h-[400px]"
+                        className="relative rounded-2xl shadow-xl w-full object-cover h-[340px] sm:h-[400px]"
                     />
-                    <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg border-l-4 border-[#F47B20] max-w-xs">
+                    <div className="absolute -bottom-6 right-3 md:-right-6 bg-white p-4 rounded-xl shadow-lg border-l-4 border-[#F47B20] max-w-[calc(100%-1.5rem)] md:max-w-xs">
                         <p className="text-sm text-gray-600 italic">
                             "OAVS bridges the gap between theory and practice."
                         </p>
@@ -95,6 +95,85 @@ const Home = ({ navigate, onBrochureDownload }) => (
             </div>
         </Section>
 
+        {/* Founder Story Shorts Section */}
+        <Section className="bg-[#F5F7FA] !py-10 md:!py-14 overflow-hidden">
+            <div className="max-w-5xl mx-auto grid lg:grid-cols-[minmax(0,1fr)_335px] gap-10 lg:gap-16 items-center overflow-hidden lg:overflow-visible">
+                <div className="min-w-0">
+                    <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-[#F47B20]/10 text-[#F47B20] text-sm font-bold mb-4">
+                        <PlayCircle size={16} />
+                        Founder Story
+                    </span>
+                    <h2 className="text-3xl md:text-[2.5rem] font-bold text-[#163A5F] mb-4 leading-tight break-words">
+                        Why Was Ophthall Academy Started?
+                    </h2>
+                    <p className="text-gray-600 mb-5 leading-relaxed text-base md:text-lg max-w-3xl">
+                        Ophthall Academy bridges India's optometry skill gap with hospital-ready training, internships, placements, and upskilling programs for working optometrists.
+                    </p>
+                    <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                        <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100 flex gap-3">
+                            <div className="shrink-0 w-9 h-9 rounded-lg bg-[#F47B20]/10 text-[#F47B20] flex items-center justify-center">
+                                <Stethoscope size={18} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-bold text-[#163A5F] mb-1">Hospital-ready graduates</p>
+                                <p className="text-sm text-gray-600 leading-relaxed">Practical training to become clinic-ready.</p>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100 flex gap-3">
+                            <div className="shrink-0 w-9 h-9 rounded-lg bg-[#F47B20]/10 text-[#F47B20] flex items-center justify-center">
+                                <Handshake size={18} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-bold text-[#163A5F] mb-1">Internships and placements</p>
+                                <p className="text-sm text-gray-600 leading-relaxed">Eye hospital exposure with placement support.</p>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100 flex gap-3">
+                            <div className="shrink-0 w-9 h-9 rounded-lg bg-[#F47B20]/10 text-[#F47B20] flex items-center justify-center">
+                                <TrendingUp size={18} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-bold text-[#163A5F] mb-1">Skill upgradation</p>
+                                <p className="text-sm text-gray-600 leading-relaxed">Contact lens, orthoptics, low vision, and clinical optometry.</p>
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100 flex gap-3">
+                            <div className="shrink-0 w-9 h-9 rounded-lg bg-[#F47B20]/10 text-[#F47B20] flex items-center justify-center">
+                                <Award size={18} />
+                            </div>
+                            <div>
+                                <p className="text-sm font-bold text-[#163A5F] mb-1">Quality education</p>
+                                <p className="text-sm text-gray-600 leading-relaxed">University-associated degree and certificate pathways.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a
+                        href="https://www.youtube.com/shorts/jarcBbNf6Tk"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-[#163A5F] text-white font-semibold hover:bg-[#0F2C4C] transition-all duration-300 shadow-lg shadow-blue-900/20"
+                    >
+                        <Youtube size={20} />
+                        Watch on YouTube
+                    </a>
+                </div>
+
+                <div className="relative mx-auto w-full max-w-[270px] sm:max-w-[305px] lg:max-w-[335px] justify-self-center">
+                    <div className="absolute -inset-3 bg-[#F47B20]/15 rounded-[1.5rem] transform rotate-3"></div>
+                    <div className="relative overflow-hidden rounded-[1.35rem] bg-[#0F2C4C] shadow-2xl shadow-blue-950/20 border-4 border-white">
+                        <div className="aspect-[9/16]">
+                            <iframe
+                                className="w-full h-full"
+                                src="https://www.youtube.com/embed/jarcBbNf6Tk?rel=0&modestbranding=1"
+                                title="Why Was Ophthall Academy Started?"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Section>
         {/* Programs Section */}
         <Section className="bg-[#F5F7FA]">
             <div className="text-center mb-16">
@@ -183,3 +262,4 @@ const Home = ({ navigate, onBrochureDownload }) => (
 );
 
 export default Home;
+
