@@ -12,6 +12,7 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
             label: 'Programmes',
             value: 'programmes',
             children: [
+                { label: 'SkillConnect 2026', value: 'skillconnect', isNew: true },
                 { label: 'Optical Dispensing', value: 'dispensing' },
                 { label: 'Clinical Optometry', value: 'clinical' },
                 { label: 'Contact Lens', value: 'contact-lens' },
@@ -81,7 +82,14 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                                                 }}
                                                 className={`w-full text-left cursor-pointer px-4 py-3 text-sm font-medium hover:bg-gray-50 flex items-center justify-between group/item ${currentPage === child.value ? 'text-[#F47B20] bg-orange-50' : 'text-[#163A5F]'}`}
                                             >
-                                                {child.label}
+                                                <span className="flex min-w-0 items-center gap-2">
+                                                    <span>{child.label}</span>
+                                                    {child.isNew && (
+                                                        <span className="rounded-full bg-[#163A5F] px-1.5 py-[1px] font-heading text-[8px] font-bold uppercase tracking-wide text-white shadow-sm ring-1 ring-[#F47B20]/20">
+                                                            New
+                                                        </span>
+                                                    )}
+                                                </span>
                                                 {currentPage === child.value && <div className="w-1.5 h-1.5 rounded-full bg-[#F47B20]" />}
                                             </button>
                                         ))}
@@ -103,7 +111,6 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                     {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
             </div>
-
             {/* Mobile Nav */}
             {isMenuOpen && (
                 <div className="absolute top-full left-0 w-full bg-white shadow-2xl py-6 px-4 flex flex-col gap-2 lg:hidden border-t max-h-[80vh] overflow-y-auto">
@@ -112,19 +119,22 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                             {link.children ? (
                                 <>
                                     <button
+                                        type="button"
                                         onClick={() => toggleDropdown(link.value)}
                                         className="flex items-center justify-between text-left py-3 px-4 rounded-xl hover:bg-gray-50 font-bold text-[#163A5F] uppercase text-sm tracking-wide"
                                     >
-                                        {link.label}
+                                        <span>{link.label}</span>
                                         <ChevronDown size={20} className={`transition-transform duration-200 ${activeDropdown === link.value ? 'rotate-180' : ''}`} />
                                     </button>
-                                    <div className={`overflow-hidden transition-all duration-300 ${activeDropdown === link.value ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+                                    <div className={`overflow-hidden transition-all duration-300 ${activeDropdown === link.value ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'}`}>
                                         <div className="pl-4 pr-2 pb-2 space-y-1 bg-gray-50/50 rounded-b-xl mb-2">
                                             {link.children.map((child) => (
                                                 <button
                                                     key={child.value}
+                                                    type="button"
                                                     onClick={() => {
                                                         navigate(child.value);
+                                                        setActiveDropdown(null);
                                                         setIsMenuOpen(false);
                                                     }}
                                                     className={`w-full text-left py-2.5 px-4 rounded-lg text-sm font-medium transition-colors ${currentPage === child.value
@@ -132,7 +142,14 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                                                         : 'text-gray-600 hover:text-[#163A5F] hover:bg-white/50'
                                                         }`}
                                                 >
-                                                    {child.label}
+                                                    <span className="flex items-center gap-2">
+                                                        <span>{child.label}</span>
+                                                        {child.isNew && (
+                                                            <span className="rounded-full bg-[#163A5F] px-1.5 py-[1px] font-heading text-[8px] font-bold uppercase tracking-wide text-white">
+                                                                New
+                                                            </span>
+                                                        )}
+                                                    </span>
                                                 </button>
                                             ))}
                                         </div>
@@ -140,6 +157,7 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                                 </>
                             ) : (
                                 <button
+                                    type="button"
                                     onClick={() => {
                                         navigate(link.value);
                                         setIsMenuOpen(false);
@@ -151,7 +169,15 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
                             )}
                         </div>
                     ))}
-                    <Button onClick={() => navigate('admissions')} className="mt-4 w-full">Apply Now</Button>
+                    <Button
+                        onClick={() => {
+                            navigate('admissions');
+                            setIsMenuOpen(false);
+                        }}
+                        className="mt-4 w-full"
+                    >
+                        Apply Now
+                    </Button>
                 </div>
             )}
         </nav>
@@ -159,3 +185,4 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
 };
 
 export default Navigation;
+

@@ -3,7 +3,7 @@ import { X, Download, User, Phone, Mail } from "lucide-react";
 
 const BROCHURE_PDF = "/broucher.jpeg";
 const SHEET_URL =
-  "https://script.google.com/macros/s/AKfycbxgH70HZ6IGqfvZnAT4XmEuSMhQDxFftEvjiKT8YarfVcytAJbIrB2yakBZo_Z6x3Hl/exec";
+"https://script.google.com/macros/s/AKfycbx62li2AWL8dySTENp65gMW29dYDGTtbSzXtgsGIeLVClzj3NcOdmhOiY02Ls-nvuFA/exec";
 
 const PROGRAMME_LABELS = {
   home: "General",

@@ -13,6 +13,7 @@ import CourseOrthoptics from './pages/CourseOrthoptics';
 import CourseLowVision from './pages/CourseLowVision';
 import Admissions from './pages/Admissions';
 import Internship from './pages/Internship';
+import SkillConnect from './pages/SkillConnect';
 import ThankYou from './pages/ThankYou';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import useUTMSource from './utils/useUTMSource';
@@ -28,7 +29,7 @@ const App = () => {
     // Initial page load and history sync
     useEffect(() => {
         const syncPath = () => {
-            const path = window.location.pathname.replace('/', '');
+            const path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
             setCurrentPage(path || 'home');
         };
 
@@ -49,6 +50,8 @@ const App = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const knownPages = ['home', 'about', 'dispensing', 'clinical', 'contact-lens', 'orthoptics', 'low-vision', 'internship', 'skillconnect', 'admissions', 'thank-you', 'privacy-policy'];
 
     const navigate = (page) => {
         setCurrentPage(page);
@@ -91,9 +94,18 @@ const App = () => {
                 {currentPage === 'orthoptics' && <CourseOrthoptics navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'low-vision' && <CourseLowVision navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'internship' && <Internship navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
+                {currentPage === 'skillconnect' && <SkillConnect navigate={navigate} />}
                 {currentPage === 'admissions' && <Admissions navigate={navigate} />}
                 {currentPage === 'thank-you' && <ThankYou navigate={navigate} />}
                 {currentPage === 'privacy-policy' && <PrivacyPolicy navigate={navigate} />}
+                {!knownPages.includes(currentPage) && (
+                    <div className="min-h-[60vh] pt-32 px-4 text-center bg-[#F5F7FA]">
+                        <p className="text-sm font-bold uppercase tracking-wide text-[#F47B20] mb-3">Page not found</p>
+                        <h1 className="text-3xl md:text-4xl font-bold text-[#163A5F] mb-4">We could not find this page.</h1>
+                        <p className="text-gray-600 mb-6">Please use the navigation menu or return to SkillConnect.</p>
+                        <button onClick={() => navigate('skillconnect')} className="bg-[#F47B20] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-500/30">Open SkillConnect 2026</button>
+                    </div>
+                )}
             </main>
 
             <Footer navigate={navigate} />
