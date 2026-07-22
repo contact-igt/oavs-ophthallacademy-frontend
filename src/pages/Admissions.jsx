@@ -39,7 +39,7 @@ const Admissions = ({ navigate }) => {
 
     const handleGoogleSheetForm = async (formData) => {
         try {
-            const res = await fetch("https://script.google.com/macros/s/AKfycbxgH70HZ6IGqfvZnAT4XmEuSMhQDxFftEvjiKT8YarfVcytAJbIrB2yakBZo_Z6x3Hl/exec", {
+            const res = await fetch("https://script.google.com/macros/s/AKfycbx62li2AWL8dySTENp65gMW29dYDGTtbSzXtgsGIeLVClzj3NcOdmhOiY02Ls-nvuFA/exec", {
                 method: "POST",
                 mode: "no-cors",
                 body: formData

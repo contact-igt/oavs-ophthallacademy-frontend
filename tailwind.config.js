@@ -13,7 +13,7 @@ export default {
                 bgContrast: '#0F2C4C',
             },
             fontFamily: {
-                sans: ['Open Sans', 'sans-serif'],
+                sans: ['Montserrat', 'sans-serif'],
                 heading: ['Montserrat', 'sans-serif'],
             },
         },
