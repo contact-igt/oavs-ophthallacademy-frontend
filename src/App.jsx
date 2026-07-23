@@ -51,8 +51,8 @@ const App = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const knownPages = ['home', 'about', 'dispensing', 'clinical', 'contact-lens', 'orthoptics', 'low-vision', 'internship', 'skillconnect', 'admissions', 'thank-you', 'privacy-policy'];
-
+    const knownPages = ['home', 'about', 'dispensing', 'clinical', 'contact-lens', 'orthoptics', 'low-vision', 'internship',  'admissions', 'thank-you', 'privacy-policy'];
+    // 'skillconnect',
     const navigate = (page) => {
         setCurrentPage(page);
         window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
@@ -94,7 +94,7 @@ const App = () => {
                 {currentPage === 'orthoptics' && <CourseOrthoptics navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'low-vision' && <CourseLowVision navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'internship' && <Internship navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
-                {currentPage === 'skillconnect' && <SkillConnect navigate={navigate} />}
+                {/* {currentPage === 'skillconnect' && <SkillConnect navigate={navigate} />} */}
                 {currentPage === 'admissions' && <Admissions navigate={navigate} />}
                 {currentPage === 'thank-you' && <ThankYou navigate={navigate} />}
                 {currentPage === 'privacy-policy' && <PrivacyPolicy navigate={navigate} />}
@@ -102,8 +102,10 @@ const App = () => {
                     <div className="min-h-[60vh] pt-32 px-4 text-center bg-[#F5F7FA]">
                         <p className="text-sm font-bold uppercase tracking-wide text-[#F47B20] mb-3">Page not found</p>
                         <h1 className="text-3xl md:text-4xl font-bold text-[#163A5F] mb-4">We could not find this page.</h1>
-                        <p className="text-gray-600 mb-6">Please use the navigation menu or return to SkillConnect.</p>
-                        <button onClick={() => navigate('skillconnect')} className="bg-[#F47B20] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-500/30">Open SkillConnect 2026</button>
+                        <p className="text-gray-600 mb-6">Please use the navigation menu or return to the homepage.</p>
+                        <button onClick={() => navigate('home')} className="bg-[#F47B20] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-orange-500/30">
+                            Return to Home
+                        </button>
                     </div>
                 )}
             </main>
