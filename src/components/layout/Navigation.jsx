@@ -12,7 +12,7 @@ const Navigation = ({ currentPage, navigate, isMenuOpen, setIsMenuOpen, scrolled
             label: 'Programmes',
             value: 'programmes',
             children: [
-                // { label: 'SkillConnect 2026', value: 'skillconnect', isNew: true },
+                { label: 'SkillConnect 2026', value: 'skillconnect', isNew: true },
                 { label: 'Optical Dispensing', value: 'dispensing' },
                 { label: 'Clinical Optometry', value: 'clinical' },
                 { label: 'Contact Lens', value: 'contact-lens' },

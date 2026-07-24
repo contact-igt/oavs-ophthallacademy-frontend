@@ -51,8 +51,7 @@ const App = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const knownPages = ['home', 'about', 'dispensing', 'clinical', 'contact-lens', 'orthoptics', 'low-vision', 'internship',  'admissions', 'thank-you', 'privacy-policy'];
-    // 'skillconnect',
+    const knownPages = ['home', 'about', 'dispensing', 'clinical', 'contact-lens', 'orthoptics', 'low-vision', 'internship', 'admissions', 'skillconnect', 'thank-you', 'privacy-policy'];
     const navigate = (page) => {
         setCurrentPage(page);
         window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
@@ -94,7 +93,7 @@ const App = () => {
                 {currentPage === 'orthoptics' && <CourseOrthoptics navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'low-vision' && <CourseLowVision navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
                 {currentPage === 'internship' && <Internship navigate={navigate} onBrochureDownload={handleBrochureDownload} />}
-                {/* {currentPage === 'skillconnect' && <SkillConnect navigate={navigate} />} */}
+                {currentPage === 'skillconnect' && <SkillConnect navigate={navigate} />}
                 {currentPage === 'admissions' && <Admissions navigate={navigate} />}
                 {currentPage === 'thank-you' && <ThankYou navigate={navigate} />}
                 {currentPage === 'privacy-policy' && <PrivacyPolicy navigate={navigate} />}

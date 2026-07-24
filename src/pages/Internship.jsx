@@ -356,7 +356,7 @@ const Internship = ({ navigate, onBrochureDownload }) => (
                 {
                   Icon: Banknote,
                   label: "Course Fee",
-                  value: "₹60,000 Including GST (Scholarships Available)",
+                  value: "Contact program coordinator for fee details.",
                 },
                 {
                   Icon: Award,
