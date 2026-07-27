@@ -900,6 +900,19 @@ const FacultyCard = ({ faculty }) => {
 };
 
 const About = () => {
+  useEffect(() => {
+    const pendingScrollTarget = sessionStorage.getItem("pendingScrollTarget");
+    const hashTarget = window.location.hash.replace("#", "");
+    const targetId = pendingScrollTarget || hashTarget;
+
+    if (targetId) {
+      window.setTimeout(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
+        sessionStorage.removeItem("pendingScrollTarget");
+      }, 120);
+    }
+  }, []);
+
   return (
     <div className="pt-20 min-h-screen bg-[#F5F7FA]">
       {/* Hero Banner */}
@@ -976,7 +989,7 @@ const About = () => {
         </div>
 
         {/* ===== FACULTY SECTION ===== */}
-        <section className="mt-24">
+        <section id="about-faculty-details" className="mt-24 scroll-mt-28">
           {/* Section Header */}
           <div className="text-center mb-14">
             <span className="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-widest text-[#F47B20] bg-[#163A5F] px-4 py-1.5 rounded-full mb-3 shadow-md">
