@@ -27,7 +27,14 @@ import {
     X,
 } from 'lucide-react';
 
-const facultyUpdatingSoonBio = 'Faculty details will be updated soon. The session will be led by experienced eye care experts, with practical guidance designed to make this workshop enriching and clinic-ready for all participants.';
+const facultyWorkshopBio = 'Their experience and insights will make this workshop truly enriching for all participants.';
+
+const workshopFacultyDetails = {
+    name: 'Faculties',
+    photo: '/assets/placeholder.png',
+    role: 'Nationwide renowned experts in their fields.',
+    bio: facultyWorkshopBio,
+};
 
 const workshops = [
     {
@@ -50,13 +57,7 @@ const workshops = [
             'School Screening Programs',
             'Practice Integration',
         ],
-        faculty: {
-            name: 'Updating soon',
-            photo: '/assets/placeholder.png',
-            role: 'Faculty - Myopia Management Workshop',
-            status: 'Updating soon',
-            bio: facultyUpdatingSoonBio,
-        },
+        faculty: workshopFacultyDetails,
     },
     {
         id: 'selling-skills',
@@ -78,13 +79,7 @@ const workshops = [
             'Handling Objections',
             'Increasing Patient Satisfaction',
         ],
-        faculty: {
-            name: 'Updating soon',
-            photo: '/assets/placeholder.png',
-            role: 'Faculty - Opticians Workshop',
-            status: 'Updating soon',
-            bio: facultyUpdatingSoonBio,
-        },
+        faculty: workshopFacultyDetails,
     },
     {
         id: 'low-vision',
@@ -105,13 +100,7 @@ const workshops = [
             'Patient Counselling',
             'Clinic Setup',
         ],
-        faculty: {
-            name: 'Updating soon',
-            photo: '/assets/placeholder.png',
-            role: 'Faculty - Low Vision Workshop',
-            status: 'Updating soon',
-            bio: facultyUpdatingSoonBio,
-        },
+        faculty: workshopFacultyDetails,
     },
     {
         id: 'binocular-vision',
@@ -132,13 +121,7 @@ const workshops = [
             'Case Discussions',
             'Marketing BV Services',
         ],
-        faculty: {
-            name: 'Updating soon',
-            photo: '/assets/placeholder.png',
-            role: 'Faculty - Orthoptics and BV Workshop',
-            status: 'Updating soon',
-            bio: facultyUpdatingSoonBio,
-        },
+        faculty: workshopFacultyDetails,
     },
     {
         id: 'master-machines',
@@ -160,13 +143,7 @@ const workshops = [
             'Corneal Diagnostics',
             'Clinical Cases',
         ],
-        faculty: {
-            name: 'Updating soon',
-            photo: '/assets/placeholder.png',
-            role: 'Faculty - Clinical Diagnostics Workshop',
-            status: 'Updating soon',
-            bio: facultyUpdatingSoonBio,
-        },
+        faculty: workshopFacultyDetails,
     },
 ];
 
@@ -306,6 +283,11 @@ const SkillConnect = ({ navigate }) => {
             }
             return [...individualSelections, workshopId];
         });
+    };
+
+    const handleOpenFacultyDetails = () => {
+        sessionStorage.setItem('pendingScrollTarget', 'about-faculty-details');
+        navigate('about');
     };
 
     const handleRemovePaymentScreenshot = (event) => {
@@ -605,7 +587,8 @@ const SkillConnect = ({ navigate }) => {
                                 key={tab.id}
                                 type="button"
                                 onClick={() => setActiveAboutTab(tab.id)}
-                                className={`flex w-full items-center justify-between rounded-2xl border p-5 text-left transition-all ${activeAboutTab === tab.id ? 'border-[#F47B20] bg-[#163A5F] shadow-xl shadow-[#163A5F]/15' : 'border-[#163A5F]/10 bg-white/80 shadow-sm hover:-translate-y-0.5 hover:border-[#F47B20]/40 hover:bg-white hover:shadow-md'}`}
+                                onMouseDown={(event) => event.preventDefault()}
+                                className={`flex w-full items-center justify-between rounded-2xl border p-5 text-left transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F47B20]/40 ${activeAboutTab === tab.id ? 'border-[#F47B20] bg-[#163A5F] shadow-xl shadow-[#163A5F]/15' : 'border-[#163A5F]/10 bg-white/80 shadow-sm hover:-translate-y-0.5 hover:border-[#F47B20]/40 hover:bg-white hover:shadow-md'}`}
                             >
                                 <span>
                                     <span className={`block font-heading text-lg font-bold ${activeAboutTab === tab.id ? 'text-white' : 'text-[#163A5F]'}`}>{tab.label}</span>
@@ -614,6 +597,23 @@ const SkillConnect = ({ navigate }) => {
                                 <span className={`ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full ${activeAboutTab === tab.id ? 'bg-[#F47B20] text-white' : 'bg-[#F5F7FA] text-gray-300'}`}><Check size={18} /></span>
                             </button>
                         ))}
+                        <button
+                            type="button"
+                            onClick={handleOpenFacultyDetails}
+                            onMouseDown={(event) => event.preventDefault()}
+                            className="group flex w-full items-start justify-between rounded-2xl border border-[#163A5F]/10 bg-white/80 p-5 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#F47B20]/40 hover:bg-white hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F47B20]/40"
+                            aria-label="Open About page faculty details"
+                        >
+                            <span>
+                                <span className="mb-2 block font-heading text-xs font-bold uppercase tracking-wide text-[#F47B20]">Faculty Details</span>
+                                <span className="block font-heading text-lg font-bold text-[#163A5F]">Faculties</span>
+                                <span className="mt-1 block font-heading text-sm font-bold uppercase tracking-wide text-[#F47B20]">Nationwide renowned experts in their fields.</span>
+                                <span className="mt-3 block font-heading text-sm leading-6 text-gray-600">Their experience and insights will make this workshop truly enriching for all participants.</span>
+                            </span>
+                            <span className="ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-orange-50 text-[#F47B20] transition-all group-hover:bg-[#F47B20] group-hover:text-white">
+                                <ArrowRight size={18} strokeWidth={2.5} />
+                            </span>
+                        </button>
                     </div>
                     <div key={activeTab.id} className="overflow-hidden rounded-2xl bg-[#0F2C4C] shadow-xl transition-opacity duration-200">
                         <img key={activeTab.image} src={activeTab.image} alt={activeTab.label} className="h-[300px] w-full object-cover md:h-[420px]" />
@@ -742,30 +742,6 @@ const SkillConnect = ({ navigate }) => {
                                         <span className="font-heading text-sm font-bold leading-6 text-[#163A5F]">{topic}</span>
                                     </div>
                                 ))}
-                            </div>
-                            <div className="mt-6 rounded-2xl border border-[#163A5F]/10 bg-white p-5 shadow-sm">
-                                <p className="font-heading text-xs font-bold uppercase tracking-wide text-[#F47B20]">Faculty Details</p>
-                                <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-start">
-                                    <img
-                                        src={activeWorkshop.faculty.photo}
-                                        alt={activeWorkshop.faculty.name}
-                                        className="h-28 w-28 flex-shrink-0 rounded-2xl border border-[#163A5F]/10 object-cover object-top shadow-sm"
-                                    />
-                                    <div className="min-w-0 flex-1">
-                                        <div className="flex flex-wrap items-center gap-2">
-                                            <h4 className="font-heading text-xl font-bold text-[#163A5F]">{activeWorkshop.faculty.name}</h4>
-                                            {activeWorkshop.faculty.status === 'Updating soon' && (
-                                                <span className="rounded-full bg-orange-50 px-3 py-1 font-heading text-xs font-bold uppercase tracking-wide text-[#F47B20]">
-                                                    {activeWorkshop.faculty.status}
-                                                </span>
-                                            )}
-                                        </div>
-                                        <p className="mt-1 font-heading text-sm font-bold uppercase tracking-wide text-[#F47B20]">{activeWorkshop.faculty.role}</p>
-                                        {activeWorkshop.faculty.bio && (
-                                            <p className="mt-3 font-heading text-sm leading-6 text-gray-600">{activeWorkshop.faculty.bio}</p>
-                                        )}
-                                    </div>
-                                </div>
                             </div>
                             <button
                                 type="button"
