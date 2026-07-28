@@ -43,7 +43,7 @@ const workshops = [
         subtitle: 'Stop Myopia, Not Just Correct It',
         date: '22 August 2026',
         day: '22 Aug',
-        time: '10 AM - 1 PM',
+        time: '10 AM - 12 PM',
         fee: 500,
         image: '/assets/myopia_masterclass.png',
         description: 'A practical clinical workshop for understanding, measuring, and managing progressive myopia with confidence.',
@@ -657,9 +657,6 @@ const SkillConnect = ({ navigate }) => {
                 <div className="mb-10">
                     <p className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-[#F47B20]">Workshop Schedule</p>
                     <h2 className="font-heading text-3xl font-bold text-[#163A5F] md:text-4xl">Two days of hands-on learning.</h2>
-                    <p className="mt-4 max-w-3xl font-heading text-gray-600">
-                        Workshop 1 and Workshop 2 overlap between 12 PM and 1 PM. Participants should review timings carefully before selecting both.
-                    </p>
                 </div>
 
                 <div className="hidden overflow-hidden rounded-2xl border border-[#163A5F]/10 bg-white shadow-xl shadow-[#163A5F]/5 md:block">
@@ -696,6 +693,11 @@ const SkillConnect = ({ navigate }) => {
                             <p className="mt-1 font-heading text-sm text-gray-500">{workshop.time}</p>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-6 rounded-xl border border-[#163A5F]/10 bg-[#F5F7FA] p-4 md:mt-8 md:p-5">
+                    <h4 className="font-heading text-sm font-bold text-[#163A5F]">Terms & Conditions</h4>
+                    <p className="mt-1 font-heading text-sm text-gray-600">Please Note Registration Fee Is Non Refundable And Does Not Include Lunch</p>
                 </div>
 
                 <div className="mt-12 grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
