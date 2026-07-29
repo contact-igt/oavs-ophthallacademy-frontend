@@ -43,7 +43,7 @@ const workshops = [
         subtitle: 'Stop Myopia, Not Just Correct It',
         date: '22 August 2026',
         day: '22 Aug',
-        time: '10 AM - 12 PM',
+        time: '09 AM - 12 PM',
         fee: 500,
         image: '/assets/myopia_masterclass.png',
         description: 'A practical clinical workshop for understanding, measuring, and managing progressive myopia with confidence.',
