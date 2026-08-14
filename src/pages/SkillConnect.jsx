@@ -543,13 +543,13 @@ const SkillConnect = ({ navigate }) => {
                             Held alongside the India International Optical Expo 2026 at Nandambakkam, Chennai.
                         </p>
                         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                            <button
+                            {/* <button
                                 type="button"
                                 onClick={() => scrollToSection('skillconnect-registration')}
                                 className="inline-flex items-center justify-center rounded-full bg-[#F47B20] px-7 py-3 font-heading font-bold text-white shadow-lg shadow-orange-500/30 transition-all hover:-translate-y-0.5 hover:bg-[#d66a15]"
                             >
                                 Register Now
-                            </button>
+                            </button> */}
                             <button
                                 type="button"
                                 onClick={() => scrollToSection('skillconnect-workshops')}
@@ -745,19 +745,19 @@ const SkillConnect = ({ navigate }) => {
                                     </div>
                                 ))}
                             </div>
-                            <button
+                            {/* <button
                                 type="button"
                                 onClick={() => toggleWorkshop(activeWorkshop.id)}
                                 className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-6 py-3 font-bold transition-all sm:w-auto ${selectedWorkshopIds.includes(activeWorkshop.id) ? 'bg-[#163A5F] text-white' : 'bg-[#F47B20] text-white hover:bg-[#d66a15]'}`}
                             >
                                 {selectedWorkshopIds.includes(activeWorkshop.id) ? 'Selected' : 'Select this workshop'}
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="bg-white py-16" id="skillconnect-registration">
+            {/* <section className="bg-white py-16" id="skillconnect-registration">
                 <div className="mx-auto max-w-5xl px-4 md:px-8">
                     <div className="mb-10 text-center">
                         <p className="mb-3 font-heading text-sm font-bold uppercase tracking-wide text-[#F47B20]">Registration</p>
@@ -1050,7 +1050,7 @@ const SkillConnect = ({ navigate }) => {
                         </button>
                     </form>
                 </div>
-            </section>
+            </section> */}
 
             <section className="bg-[#163A5F] py-14 text-white">
                 <div className="mx-auto max-w-7xl px-4 md:px-8">
